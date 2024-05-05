@@ -1,20 +1,18 @@
 AtomicVim.format.setup()
 
--- local disabled = {}
+-- local disabled_plugins = {
+--   "nvimtools/none-ls.nvim",
+-- }
 
--- for _, plugin in ipairs(AtomicVim.plugins) do
---   if plugin.disable then disabled[#disabled + 1] = plugin.name end
--- end
-
--- if #disabled > 0 then
---   AtomicVim.warn(
---     "Disabled plugins: " .. table.concat(disabled, ", ") .. "\n" .. "To enable, run: lazy install",
---     { title = "LazyVim" }
---   )
--- end
-
-return {
-  { import = "plugins.astro" },
-  { import = "plugins.lang" },
-  { import = "plugins.lsp" },
+local imports = {
+  "plugins.astro",
+  "plugins.lang",
+  "plugins.lsp",
 }
+
+-- -- Add disabled plugins to imports
+-- for _, disabled in ipairs(disabled_plugins) do
+--   table.insert(imports, { disabled, enabled = false })
+-- end
+
+return imports

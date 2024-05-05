@@ -135,7 +135,7 @@ function M.health()
 end
 
 function M.setup()
-  M.health()
+  -- M.health()
 
   -- Autoformat autocmd
   vim.api.nvim_create_autocmd("BufWritePre", {
